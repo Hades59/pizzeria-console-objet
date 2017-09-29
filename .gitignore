@@ -1,1 +1,6 @@
-/bin/
+//ignorer fichier & dossie
+target/
+.classpath
+.project
+.settings/
+bin/

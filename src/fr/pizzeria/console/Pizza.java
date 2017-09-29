@@ -1,4 +1,6 @@
 package fr.pizzeria.console;
+import java.text.DecimalFormat;
+import java.text.NumberFormat;
 
 public class Pizza {
 	
@@ -6,6 +8,7 @@ public class Pizza {
 	private String code;
 	private String nom;
 	private double prix;
+	NumberFormat formatter = new DecimalFormat("#0.00");
 	
 	/**
 	 * @param code
@@ -24,7 +27,7 @@ public class Pizza {
 	 * @return
 	 */
 	public String toString(){
-		return this.getCode()+" -> "+this.getNom()+" "+"("+this.getPrix()+"\u20ac)";		
+		return this.getCode()+" -> "+this.getNom()+" "+"("+formatter.format(this.getPrix())+"\u20ac)";		
 	}
 	
 	/**
