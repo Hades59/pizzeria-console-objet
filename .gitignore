@@ -1,6 +1,7 @@
-//ignorer fichier & dossie
+//ignorer fichier & dossier
 target/
 .classpath
 .project
 .settings/
 bin/
+/target/
