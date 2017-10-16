@@ -1,0 +1,194 @@
+12:06:11.864 [main] INFO  f.p.console.PizzeriaAdminConsoleApp -
+				
+*****Pizzeria Asministration*****
+
+12:06:11.864 [main] INFO  f.p.console.PizzeriaAdminConsoleApp -
+				1 - Lister les pizzas
+12:06:11.864 [main] INFO  f.p.console.PizzeriaAdminConsoleApp -
+				2 - Ajouter une nouvelle pizza
+12:06:11.864 [main] INFO  f.p.console.PizzeriaAdminConsoleApp -
+				3 - Mettre à jour une pizza
+12:06:11.864 [main] INFO  f.p.console.PizzeriaAdminConsoleApp -
+				4 - Supprimer une pizza
+12:06:11.864 [main] INFO  f.p.console.PizzeriaAdminConsoleApp -
+				99 - Quitter
+12:06:22.135 [main] INFO  f.p.console.PizzeriaAdminConsoleApp -
+				
+*****Pizzeria Asministration*****
+
+12:06:22.135 [main] INFO  f.p.console.PizzeriaAdminConsoleApp -
+				1 - Lister les pizzas
+12:06:22.135 [main] INFO  f.p.console.PizzeriaAdminConsoleApp -
+				2 - Ajouter une nouvelle pizza
+12:06:22.135 [main] INFO  f.p.console.PizzeriaAdminConsoleApp -
+				3 - Mettre à jour une pizza
+12:06:22.135 [main] INFO  f.p.console.PizzeriaAdminConsoleApp -
+				4 - Supprimer une pizza
+12:06:22.135 [main] INFO  f.p.console.PizzeriaAdminConsoleApp -
+				99 - Quitter
+12:06:26.626 [main] INFO  f.p.console.PizzeriaAdminConsoleApp -
+				Ajout d'une nouvelle pizza:
+12:06:26.638 [main] INFO  f.p.console.PizzeriaAdminConsoleApp -
+				Veuillez saisir le code de la pizza à ajouter: 
+12:06:30.405 [main] INFO  f.p.console.PizzeriaAdminConsoleApp -
+				Veuillez saisir le nom: 
+12:06:35.171 [main] INFO  f.p.console.PizzeriaAdminConsoleApp -
+				Veuillez saisir le prix: 
+12:06:38.545 [main] INFO  f.p.console.PizzeriaAdminConsoleApp -
+				Veuillez saisir la catégorie: 
+ 1- Viande
+ 2- Sans viande
+ 3- Poisson
+12:06:42.388 [main] INFO  f.p.console.PizzeriaAdminConsoleApp -
+				
+*****Pizzeria Asministration*****
+
+12:06:42.398 [main] INFO  f.p.console.PizzeriaAdminConsoleApp -
+				1 - Lister les pizzas
+12:06:42.398 [main] INFO  f.p.console.PizzeriaAdminConsoleApp -
+				2 - Ajouter une nouvelle pizza
+12:06:42.398 [main] INFO  f.p.console.PizzeriaAdminConsoleApp -
+				3 - Mettre à jour une pizza
+12:06:42.398 [main] INFO  f.p.console.PizzeriaAdminConsoleApp -
+				4 - Supprimer une pizza
+12:06:42.398 [main] INFO  f.p.console.PizzeriaAdminConsoleApp -
+				99 - Quitter
+12:06:46.214 [main] INFO  f.p.console.PizzeriaAdminConsoleApp -
+				
+*****Pizzeria Asministration*****
+
+12:06:46.214 [main] INFO  f.p.console.PizzeriaAdminConsoleApp -
+				1 - Lister les pizzas
+12:06:46.214 [main] INFO  f.p.console.PizzeriaAdminConsoleApp -
+				2 - Ajouter une nouvelle pizza
+12:06:46.214 [main] INFO  f.p.console.PizzeriaAdminConsoleApp -
+				3 - Mettre à jour une pizza
+12:06:46.214 [main] INFO  f.p.console.PizzeriaAdminConsoleApp -
+				4 - Supprimer une pizza
+12:06:46.214 [main] INFO  f.p.console.PizzeriaAdminConsoleApp -
+				99 - Quitter
+12:09:12.669 [main] INFO  f.p.console.PizzeriaAdminConsoleApp -
+				
+*****Pizzeria Asministration*****
+
+12:09:12.669 [main] INFO  f.p.console.PizzeriaAdminConsoleApp -
+				1 - Lister les pizzas
+12:09:12.669 [main] INFO  f.p.console.PizzeriaAdminConsoleApp -
+				2 - Ajouter une nouvelle pizza
+12:09:12.669 [main] INFO  f.p.console.PizzeriaAdminConsoleApp -
+				3 - Mettre à jour une pizza
+12:09:12.669 [main] INFO  f.p.console.PizzeriaAdminConsoleApp -
+				4 - Supprimer une pizza
+12:09:12.669 [main] INFO  f.p.console.PizzeriaAdminConsoleApp -
+				99 - Quitter
+12:09:14.855 [main] INFO  f.p.console.PizzeriaAdminConsoleApp -
+				
+*****Pizzeria Asministration*****
+
+12:09:14.855 [main] INFO  f.p.console.PizzeriaAdminConsoleApp -
+				1 - Lister les pizzas
+12:09:14.855 [main] INFO  f.p.console.PizzeriaAdminConsoleApp -
+				2 - Ajouter une nouvelle pizza
+12:09:14.855 [main] INFO  f.p.console.PizzeriaAdminConsoleApp -
+				3 - Mettre à jour une pizza
+12:09:14.855 [main] INFO  f.p.console.PizzeriaAdminConsoleApp -
+				4 - Supprimer une pizza
+12:09:14.855 [main] INFO  f.p.console.PizzeriaAdminConsoleApp -
+				99 - Quitter
+12:09:25.076 [main] INFO  f.p.console.PizzeriaAdminConsoleApp -
+				
+*****Pizzeria Asministration*****
+
+12:09:25.092 [main] INFO  f.p.console.PizzeriaAdminConsoleApp -
+				1 - Lister les pizzas
+12:09:25.092 [main] INFO  f.p.console.PizzeriaAdminConsoleApp -
+				2 - Ajouter une nouvelle pizza
+12:09:25.092 [main] INFO  f.p.console.PizzeriaAdminConsoleApp -
+				3 - Mettre à jour une pizza
+12:09:25.092 [main] INFO  f.p.console.PizzeriaAdminConsoleApp -
+				4 - Supprimer une pizza
+12:09:25.092 [main] INFO  f.p.console.PizzeriaAdminConsoleApp -
+				99 - Quitter
+12:09:27.166 [main] INFO  f.p.console.PizzeriaAdminConsoleApp -
+				
+*****Pizzeria Asministration*****
+
+12:09:27.166 [main] INFO  f.p.console.PizzeriaAdminConsoleApp -
+				1 - Lister les pizzas
+12:09:27.166 [main] INFO  f.p.console.PizzeriaAdminConsoleApp -
+				2 - Ajouter une nouvelle pizza
+12:09:27.166 [main] INFO  f.p.console.PizzeriaAdminConsoleApp -
+				3 - Mettre à jour une pizza
+12:09:27.166 [main] INFO  f.p.console.PizzeriaAdminConsoleApp -
+				4 - Supprimer une pizza
+12:09:27.166 [main] INFO  f.p.console.PizzeriaAdminConsoleApp -
+				99 - Quitter
+12:09:54.857 [main] INFO  f.p.console.PizzeriaAdminConsoleApp -
+				Ajout d'une nouvelle pizza:
+12:09:54.869 [main] INFO  f.p.console.PizzeriaAdminConsoleApp -
+				Veuillez saisir le code de la pizza à ajouter: 
+12:09:58.282 [main] INFO  f.p.console.PizzeriaAdminConsoleApp -
+				Veuillez saisir le nom: 
+12:10:04.614 [main] INFO  f.p.console.PizzeriaAdminConsoleApp -
+				Veuillez saisir le prix: 
+12:10:06.811 [main] INFO  f.p.console.PizzeriaAdminConsoleApp -
+				Veuillez saisir la catégorie: 
+ 1- Viande
+ 2- Sans viande
+ 3- Poisson
+12:10:09.281 [main] INFO  f.p.console.PizzeriaAdminConsoleApp -
+				
+*****Pizzeria Asministration*****
+
+12:10:09.285 [main] INFO  f.p.console.PizzeriaAdminConsoleApp -
+				1 - Lister les pizzas
+12:10:09.285 [main] INFO  f.p.console.PizzeriaAdminConsoleApp -
+				2 - Ajouter une nouvelle pizza
+12:10:09.285 [main] INFO  f.p.console.PizzeriaAdminConsoleApp -
+				3 - Mettre à jour une pizza
+12:10:09.285 [main] INFO  f.p.console.PizzeriaAdminConsoleApp -
+				4 - Supprimer une pizza
+12:10:09.285 [main] INFO  f.p.console.PizzeriaAdminConsoleApp -
+				99 - Quitter
+12:10:11.685 [main] INFO  f.p.console.PizzeriaAdminConsoleApp -
+				
+*****Pizzeria Asministration*****
+
+12:10:11.685 [main] INFO  f.p.console.PizzeriaAdminConsoleApp -
+				1 - Lister les pizzas
+12:10:11.685 [main] INFO  f.p.console.PizzeriaAdminConsoleApp -
+				2 - Ajouter une nouvelle pizza
+12:10:11.685 [main] INFO  f.p.console.PizzeriaAdminConsoleApp -
+				3 - Mettre à jour une pizza
+12:10:11.685 [main] INFO  f.p.console.PizzeriaAdminConsoleApp -
+				4 - Supprimer une pizza
+12:10:11.685 [main] INFO  f.p.console.PizzeriaAdminConsoleApp -
+				99 - Quitter
+15:12:11.415 [main] INFO  f.p.console.PizzeriaAdminConsoleApp -
+				
+*****Pizzeria Asministration*****
+
+15:12:11.417 [main] INFO  f.p.console.PizzeriaAdminConsoleApp -
+				1 - Lister les pizzas
+15:12:11.417 [main] INFO  f.p.console.PizzeriaAdminConsoleApp -
+				2 - Ajouter une nouvelle pizza
+15:12:11.417 [main] INFO  f.p.console.PizzeriaAdminConsoleApp -
+				3 - Mettre à jour une pizza
+15:12:11.417 [main] INFO  f.p.console.PizzeriaAdminConsoleApp -
+				4 - Supprimer une pizza
+15:12:11.417 [main] INFO  f.p.console.PizzeriaAdminConsoleApp -
+				99 - Quitter
+15:12:16.993 [main] INFO  f.p.console.PizzeriaAdminConsoleApp -
+				
+*****Pizzeria Asministration*****
+
+15:12:16.993 [main] INFO  f.p.console.PizzeriaAdminConsoleApp -
+				1 - Lister les pizzas
+15:12:16.993 [main] INFO  f.p.console.PizzeriaAdminConsoleApp -
+				2 - Ajouter une nouvelle pizza
+15:12:16.993 [main] INFO  f.p.console.PizzeriaAdminConsoleApp -
+				3 - Mettre à jour une pizza
+15:12:16.993 [main] INFO  f.p.console.PizzeriaAdminConsoleApp -
+				4 - Supprimer une pizza
+15:12:16.993 [main] INFO  f.p.console.PizzeriaAdminConsoleApp -
+				99 - Quitter

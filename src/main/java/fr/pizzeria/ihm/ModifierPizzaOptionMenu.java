@@ -1,8 +1,12 @@
 package fr.pizzeria.ihm;
 
-import fr.pizzeria.console.Pizza;
+import org.slf4j.Logger;
+import org.slf4j.LoggerFactory;
+
 import fr.pizzeria.console.PizzeriaAdminConsoleApp;
-import fr.pizzeria.dao.PizzaDao;
+import fr.pizzeria.dao.impl.PizzaDao;
+import fr.pizzeria.model.CategoriePizza;
+import fr.pizzeria.model.Pizza;
 
 public class ModifierPizzaOptionMenu extends OptionMenu {
 
@@ -10,78 +14,63 @@ public class ModifierPizzaOptionMenu extends OptionMenu {
 	 * 
 	 */
 	PizzaDao modpizza;
-	
+
+	public static final Logger LOG = LoggerFactory.getLogger(PizzeriaAdminConsoleApp.class);
+
 	public ModifierPizzaOptionMenu(	PizzaDao modpizza) {
 		super();
 		this.modpizza = modpizza;
 	}
 
 	public void execute() {
-		
+
 		String code=null, newCode = null, nom=null;
 		double prix = -1.0;
-		
+		int categorie =0;
+
 		try
 		{
-			System.out.println("Veuillez saisir le code de la pizza à modifier: ");
+			LOG.info("Veuillez saisir le code de la pizza à modifier: ");
 			code = PizzeriaAdminConsoleApp.saisi.nextLine();
 		}catch(Exception e){
-			System.out.print(e.getMessage());
+			LOG.info(e.getMessage());
 		}
-		
-		/*for(int i=0; i<PizzeriaAdminConsoleApp.getListpizza().length; i++)
-		{
-			if (PizzeriaAdminConsoleApp.listpizza[i]!=null && code.equals(PizzeriaAdminConsoleApp.listpizza[i].getCode())){
-				
-				if(nom == null){
-					System.out.println("Veuillez saisir le nom: ");
-					nom = PizzeriaAdminConsoleApp.saisi.nextLine();
-				}
-				if(prix < 0){
-					System.out.println("Veuillez saisir le prix: ");
-					prix = Double.parseDouble(PizzeriaAdminConsoleApp.saisi.nextLine());
-				}
-				PizzeriaAdminConsoleApp.listpizza[i].setCode(code);
-				PizzeriaAdminConsoleApp.listpizza[i].setNom(nom);
-				PizzeriaAdminConsoleApp.listpizza[i].setPrix(prix);
-				
-			}
-		}*/
-//		for(int i=0; i<modpizza.getL().size(); i++)
-//		{
-//			if (modpizza.getL()!=null && code.equals(modpizza.getL().get(i).getCode())){
-//				
-//				if(nom == null){
-//					System.out.println("Veuillez saisir le nom: ");
-//					nom = PizzeriaAdminConsoleApp.saisi.nextLine();
-//				}
-//				if(prix < 0){
-//					System.out.println("Veuillez saisir le prix: ");
-//					prix = Double.parseDouble(PizzeriaAdminConsoleApp.saisi.nextLine());
-//				}
+
 		if(newCode == null){
-			System.out.println("Veuillez saisir le code: ");
+			LOG.info("Veuillez saisir le code: ");
 			newCode = PizzeriaAdminConsoleApp.saisi.nextLine();
 		}
 		if(nom == null){
-			System.out.println("Veuillez saisir le nom: ");
+			LOG.info("Veuillez saisir le nom: ");
 			nom = PizzeriaAdminConsoleApp.saisi.nextLine();
 		}
 		if(prix < 0){
-			System.out.println("Veuillez saisir le prix: ");
+			LOG.info("Veuillez saisir le prix: ");
 			prix = Double.parseDouble(PizzeriaAdminConsoleApp.saisi.nextLine());
 		}
-				Pizza p = new Pizza(newCode, nom, prix);
-				try{
-				modpizza.updatePizza(code, p);
-				}catch(Exception e){
-					System.out.println(e.getMessage());
-				}
-////				modpizza.getL().get(i).setCode(code);
-////				modpizza.getL().get(i).setNom(nom);
-////				modpizza.getL().get(i).setPrix(prix);
-//				
-//			}
-//		}
+				
+		categorie= Integer.parseInt( PizzeriaAdminConsoleApp.saisi.nextLine());
+		Pizza p;
+		switch(categorie)
+		{
+			case 1: p = new Pizza(code, nom, prix, CategoriePizza.VIANDE);
+					
+				break;
+			
+			case 2: p = new Pizza(code, nom, prix, CategoriePizza.SANS_VIANDE);
+				break;
+				
+			case 3: p = new Pizza(code, nom, prix, CategoriePizza.POISSON);
+				break;
+				
+			default: LOG.info("Catégorie non valide!!!");
+				return;
+		}
+		
+		try{
+			modpizza.updatePizza(code, p);
+		}catch(Exception e){
+			LOG.info(e.getMessage());
+		}
 	}
 }

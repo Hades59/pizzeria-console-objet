@@ -1,8 +1,8 @@
 package fr.pizzeria.ihm;
 
-import fr.pizzeria.console.Pizza;
 import fr.pizzeria.console.PizzeriaAdminConsoleApp;
-import fr.pizzeria.dao.PizzaDao;
+import fr.pizzeria.dao.impl.PizzaDao;
+import fr.pizzeria.model.Pizza;
 
 /**
  * @author ETY3

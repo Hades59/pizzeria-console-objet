@@ -3,10 +3,12 @@
  */
 package fr.pizzeria.dao;
 
-import fr.pizzeria.console.Pizza;
+import java.util.List;
+
 import fr.pizzeria.exception.DeletePizzaException;
 import fr.pizzeria.exception.SavePizzaException;
 import fr.pizzeria.exception.UpdatePizzaException;
+import fr.pizzeria.model.Pizza;
 
 /**
  * @author ETY3
@@ -14,7 +16,7 @@ import fr.pizzeria.exception.UpdatePizzaException;
  */
 public interface IPizzaDao {
 	
-		Pizza findAllPizzas();
+		List<Pizza> findAllPizzas();
 		boolean saveNewPizza(Pizza pizza) throws SavePizzaException;
 		boolean updatePizza(String codePizza, Pizza pizza) throws UpdatePizzaException;
 		boolean deletePizza(String codePizza) throws DeletePizzaException;

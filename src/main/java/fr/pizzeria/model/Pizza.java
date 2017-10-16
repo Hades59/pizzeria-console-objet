@@ -1,4 +1,4 @@
-package fr.pizzeria.console;
+package fr.pizzeria.model;
 import java.text.DecimalFormat;
 import java.text.NumberFormat;
 
@@ -9,17 +9,20 @@ public class Pizza {
 	private String nom;
 	private double prix;
 	NumberFormat formatter = new DecimalFormat("#0.00");
-	
+	int categorie;
+
 	/**
 	 * @param code
 	 * @param nom
 	 * @param prix
+	 * @param categorie
 	 */
-	public Pizza(String code, String nom, double prix) {
+	public Pizza(String code, String nom, double prix, int categorie) {
 		super();
 		this.code = code;
 		this.nom = nom;
 		this.prix = prix;
+		this.categorie = categorie;
 	}
 	
 	/**
@@ -27,7 +30,7 @@ public class Pizza {
 	 * @return
 	 */
 	public String toString(){
-		return this.getCode()+" -> "+this.getNom()+" "+"("+formatter.format(this.getPrix())+"\u20ac)";		
+		return this.getCode()+" -> "+this.getNom()+" "+"("+formatter.format(this.getPrix())+"\u20ac) "+this.getCategorie();		
 	}
 	
 	/**
@@ -58,6 +61,20 @@ public class Pizza {
 
 	public void setPrix(double prix) {
 		this.prix = prix;
+	}
+	
+	/** Getter for categorie
+	 * @return the categorie
+	 */
+	public CategoriePizza getCategorie() {
+		return categorie;
+	}
+
+	/** Setter for categorie
+	 * @param categorie the categorie to set
+	 */
+	public void setCategorie(CategoriePizza categorie) {
+		this.categorie = categorie;
 	}
 
 }

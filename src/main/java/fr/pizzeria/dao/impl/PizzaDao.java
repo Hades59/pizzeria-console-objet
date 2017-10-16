@@ -1,16 +1,18 @@
 /**
  * 
  */
-package fr.pizzeria.dao;
+package fr.pizzeria.dao.impl;
 
 import java.util.LinkedList;
 import java.util.List;
 
-import fr.pizzeria.console.Pizza;
 import fr.pizzeria.console.PizzeriaAdminConsoleApp;
+import fr.pizzeria.dao.IPizzaDao;
 import fr.pizzeria.exception.DeletePizzaException;
 import fr.pizzeria.exception.SavePizzaException;
 import fr.pizzeria.exception.UpdatePizzaException;
+import fr.pizzeria.model.CategoriePizza;
+import fr.pizzeria.model.Pizza;
 
 /**
  * @author ETY3
@@ -37,33 +39,28 @@ public class PizzaDao implements IPizzaDao {
 	public PizzaDao() {
 		
 		l = new LinkedList<Pizza>();
-		l.add(new Pizza("PEP", "Pépéroni", 12.5));
-		l.add(new Pizza("MAR", "Margherita", 14));
-		l.add(new Pizza("REIN", "La Reine", 11.5));
-		l.add(new Pizza("FRO", "La 4 fromages", 12));
-		l.add(new Pizza("CAN", "La cannibale", 12.5));
-		l.add(new Pizza("SAV", "La savoyarde", 13));
-		l.add(new Pizza("ORI", "L'orientale", 13.5));
-		l.add(new Pizza("IND", "L'indienne", 14));
+		l.add(new Pizza("PEP", "Pépéroni", 12.5, CategoriePizza.VIANDE));
+		l.add(new Pizza("MAR", "Margherita", 14, CategoriePizza.SANS_VIANDE));
+		l.add(new Pizza("REIN", "La Reine", 11.5, CategoriePizza.VIANDE));
+		l.add(new Pizza("FRO", "La 4 fromages", 12, CategoriePizza.SANS_VIANDE));
+		l.add(new Pizza("CAN", "La cannibale", 12.5, CategoriePizza.VIANDE));
+		l.add(new Pizza("SAV", "La savoyarde", 13, CategoriePizza.VIANDE));
+		l.add(new Pizza("ORI", "L'orientale", 13.5, CategoriePizza.VIANDE));
+		l.add(new Pizza("IND", "L'indienne", 14, CategoriePizza.VIANDE));
 	}
 
 	/**
 	 * @param args
 	 */
-	/*public static void main(String[] args) {
-		ArrayList lp = new ArrayList();
 
-	}*/
 
 //	@Override
 	public Pizza findAllPizzas() {
-		// TODO Auto-generated method stub
 		return null;
 	}
 
 //	@Override
 	public boolean saveNewPizza(Pizza pizza) throws SavePizzaException {
-		// TODO Auto-generated method stub
 		if(pizza == null){
 			throw new SavePizzaException("Pas de pizza rentrée");
 		}
@@ -84,9 +81,7 @@ public class PizzaDao implements IPizzaDao {
 				l.get(i).setCode(pizza.getCode());
 				l.get(i).setNom(pizza.getNom());
 				l.get(i).setPrix(pizza.getPrix());
-//				modpizza.getL().get(i).setCode(code);
-//				modpizza.getL().get(i).setNom(nom);
-//				modpizza.getL().get(i).setPrix(prix);
+				l.get(i).setCategorie(pizza.getCategorie());
 				return true;
 			}
 		}
@@ -95,7 +90,6 @@ public class PizzaDao implements IPizzaDao {
 
 //	@Override
 	public boolean deletePizza(String codePizza) throws DeletePizzaException {
-		// TODO Auto-generated method stub
 		if(codePizza == null){
 			throw new DeletePizzaException("Pas de pizza à supprimer");
 		}	

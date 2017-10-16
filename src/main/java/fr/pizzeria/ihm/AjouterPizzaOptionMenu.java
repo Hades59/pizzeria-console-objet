@@ -1,9 +1,13 @@
 package fr.pizzeria.ihm;
 
-import fr.pizzeria.console.Pizza;
+import org.slf4j.Logger;
+import org.slf4j.LoggerFactory;
+
 import fr.pizzeria.console.PizzeriaAdminConsoleApp;
-import fr.pizzeria.dao.PizzaDao;
+import fr.pizzeria.dao.impl.PizzaDao;
 import fr.pizzeria.exception.SavePizzaException;
+import fr.pizzeria.model.CategoriePizza;
+import fr.pizzeria.model.Pizza;
 
 /**
  * @author ETY3
@@ -17,6 +21,9 @@ public class AjouterPizzaOptionMenu extends OptionMenu {
 	
 	PizzaDao addpizza;
 	
+	public static final Logger LOG = LoggerFactory.getLogger(PizzeriaAdminConsoleApp.class);
+
+	
 	public AjouterPizzaOptionMenu(PizzaDao addpizza) {
 		super();
 		this.addpizza = addpizza;
@@ -26,31 +33,38 @@ public class AjouterPizzaOptionMenu extends OptionMenu {
 		
 		String code = null, nom = null;
 		double prix = 0;
+		int categorie=0;
 		
 		try{
-			System.out.println("Veuillez saisir le code de la pizza à ajouter: ");
+			//on remplace les syso par 
+			LOG.info("Veuillez saisir le code de la pizza à ajouter: ");
 			code = PizzeriaAdminConsoleApp.saisi.nextLine();
-			System.out.println("Veuillez saisir le nom: ");
+			LOG.info("Veuillez saisir le nom: ");
 			nom = PizzeriaAdminConsoleApp.saisi.nextLine();
-			System.out.println("Veuillez saisir le prix: ");
+			LOG.info("Veuillez saisir le prix: ");
 			prix = Double.parseDouble(PizzeriaAdminConsoleApp.saisi.nextLine());
-		}catch(Exception e){
-			System.out.println(e.getMessage());
-		}
+			LOG.info("Veuillez saisir la catégorie: \n 1- Viande\n 2- Sans viande\n 3- Poisson");
+			categorie= Integer.parseInt( PizzeriaAdminConsoleApp.saisi.nextLine());
+			Pizza p;
+			switch(categorie)
+			{
+				case 1: p = new Pizza(code, nom, prix, categorie);
+					break;
 				
-		/*for (int i=0; i<PizzeriaAdminConsoleApp.getListpizza().length; i++)
-		{
-			if (PizzeriaAdminConsoleApp.getListpizza()[i]==null){
-				PizzeriaAdminConsoleApp.getListpizza()[i] = new Pizza(code, nom, prix);
+				case 2: p = new Pizza(code, nom, prix, categorie);
+					break;
+					
+				case 3: p = new Pizza(code, nom, prix, categorie);
+					break;
+					
+				default: LOG.info("Catégorie non valide!!!");
+					return;
 			}
-		}*/
-		
-		Pizza p = new Pizza(code, nom, prix);
-		try{
 			addpizza.saveNewPizza(p);
 		}catch(Exception e){
-			System.out.println(e.getMessage());
+			LOG.info(e.getMessage());
 		}
+	
 	}
 
 }
