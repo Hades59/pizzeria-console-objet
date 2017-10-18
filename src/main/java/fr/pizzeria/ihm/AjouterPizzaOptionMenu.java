@@ -4,7 +4,7 @@ import org.slf4j.Logger;
 import org.slf4j.LoggerFactory;
 
 import fr.pizzeria.console.PizzeriaAdminConsoleApp;
-import fr.pizzeria.dao.impl.PizzaDao;
+import fr.pizzeria.dao.impl.PizzaDaoJPA;
 import fr.pizzeria.exception.SavePizzaException;
 import fr.pizzeria.model.CategoriePizza;
 import fr.pizzeria.model.Pizza;
@@ -19,12 +19,12 @@ public class AjouterPizzaOptionMenu extends OptionMenu {
 	 * 
 	 */
 	
-	PizzaDao addpizza;
+	PizzaDaoJPA addpizza;
 	
 	public static final Logger LOG = LoggerFactory.getLogger(PizzeriaAdminConsoleApp.class);
 
 	
-	public AjouterPizzaOptionMenu(PizzaDao addpizza) {
+	public AjouterPizzaOptionMenu(PizzaDaoJPA addpizza) {
 		super();
 		this.addpizza = addpizza;
 	}
@@ -48,13 +48,9 @@ public class AjouterPizzaOptionMenu extends OptionMenu {
 			Pizza p;
 			switch(categorie)
 			{
-				case 1: p = new Pizza(code, nom, prix, categorie);
-					break;
-				
-				case 2: p = new Pizza(code, nom, prix, categorie);
-					break;
-					
-				case 3: p = new Pizza(code, nom, prix, categorie);
+				case 1: 
+				case 2:
+				case 3: p = new Pizza(code, nom, prix, addpizza.findCategorie(categorie));
 					break;
 					
 				default: LOG.info("Catégorie non valide!!!");

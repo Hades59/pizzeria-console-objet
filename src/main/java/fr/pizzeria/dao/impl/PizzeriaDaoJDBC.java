@@ -18,6 +18,8 @@ import fr.pizzeria.model.Pizza;
 import java.util.List;
 import java.util.Properties;
 import java.io.FileInputStream;
+import java.io.FileNotFoundException;
+import java.io.IOException;
 import java.io.InputStream;
 
 /**
@@ -27,25 +29,26 @@ import java.io.InputStream;
 public class PizzeriaDaoJDBC implements IPizzaDao {
 
 	/**
-	 * @throws ClassNotFoundException 
-	 * @throws SQLException 
+	 * @throws ClassNotFoundException
+	 * @throws SQLException
 	 * 
 	 */
-	Connection conn ;
+	Connection conn;
 	public static final Logger LOG = LoggerFactory.getLogger(PizzeriaAdminConsoleApp.class);
 
-	public Connection connection() {
+	public Connection connection() throws IOException {
 		try {
-			
+
 			Properties prop = new Properties();
 			InputStream input = null;
-			
+
 			input = new FileInputStream("src/main/resources/jdbc.properties");
-			
+
 			prop.load(input);
-			
+
 			Class.forName("org.mariadb.jdbc.Driver");
-			Connection conn = DriverManager.getConnection(prop.getProperty("jdbc.url"), prop.getProperty("jdbc.username"), prop.getProperty("jdbc.password"));
+			Connection conn = DriverManager.getConnection(prop.getProperty("jdbc.url"),
+					prop.getProperty("jdbc.username"), prop.getProperty("jdbc.password"));
 
 		} catch (ClassNotFoundException | SQLException e) {
 			LOG.info(e.getMessage());
@@ -54,42 +57,44 @@ public class PizzeriaDaoJDBC implements IPizzaDao {
 	}
 
 	@Override
-	public List<Pizza> findAllPizzas() {
-		
+	public List<Pizza> findAllPizzas() throws IOException {
+
 		try {
 			Connection conn = connection();
 			PreparedStatement selectPizzaSt = conn.prepareStatement("SELECT * FROM pizza");
 			selectPizzaSt.executeQuery();
 		} catch (SQLException e) {
-			// TODO Auto-generated catch block
 			LOG.info(e.getMessage());
 		}
 		return null;
 	}
 
 	@Override
-	public boolean saveNewPizza(Pizza pizza) throws SavePizzaException {
+	public boolean saveNewPizza(Pizza pizza) throws SavePizzaException, IOException, SQLException {
 		Connection conn = connection();
-		PreparedStatement insertPizzaST = conn.prepareStatement("INSERT INTO pizza(code, nom, prix, categorie VALUES (?,?,?,?)");
+		PreparedStatement insertPizzaST = conn
+				.prepareStatement("INSERT INTO pizza(code, nom, prix, categorie VALUES (?,?,?,?)");
 		insertPizzaST.setString(1, pizza.getCode());
 		insertPizzaST.setString(2, pizza.getNom());
 		insertPizzaST.setDouble(3, pizza.getPrix());
-		insertPizzaST.setInt(4, pizza.getCategorie());
-		
-		if(pizza == null){
+		insertPizzaST.setInt(4, pizza.getCategorie().getId());
+
+		if (pizza == null) {
 			throw new SavePizzaException("Pas de pizza rentrée");
 		}
 		return false;
 	}
 
 	@Override
-	public boolean updatePizza(String codePizza, Pizza pizza) throws UpdatePizzaException {
+	public boolean updatePizza(String codePizza, Pizza pizza) throws UpdatePizzaException, SQLException {
+		PreparedStatement statement = null;
 		int updatePizzaST = statement.executeUpdate();
 		return false;
 	}
 
 	@Override
-	public boolean deletePizza(String codePizza) throws DeletePizzaException {
+	public boolean deletePizza(String codePizza) throws DeletePizzaException, SQLException {
+		Statement statement = null;
 		int delPizzaSt = statement.executeUpdate("SELECT * FROM pizza WHERE code = ?");
 		return false;
 	}

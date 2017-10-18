@@ -8,7 +8,7 @@ import org.slf4j.LoggerFactory;
 
 import org.slf4j.Logger;
 
-import fr.pizzeria.dao.impl.PizzaDao;
+import fr.pizzeria.dao.impl.PizzaDaoJPA;
 import fr.pizzeria.exception.DeletePizzaException;
 import fr.pizzeria.ihm.AjouterPizzaOptionMenu;
 import fr.pizzeria.ihm.ListerPizzasOptionMenu;
@@ -25,7 +25,7 @@ public class PizzeriaAdminConsoleApp {
 		
 		int choix;
 		Scanner saisi = new Scanner(System.in);
-		PizzaDao dao = new PizzaDao();
+		PizzaDaoJPA dao = new PizzaDaoJPA();
 						
 		ListerPizzasOptionMenu listerPizza = new ListerPizzasOptionMenu(dao);
 		AjouterPizzaOptionMenu ajouterPizza = new AjouterPizzaOptionMenu(dao);

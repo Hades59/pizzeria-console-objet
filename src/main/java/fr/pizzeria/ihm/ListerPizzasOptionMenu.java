@@ -1,7 +1,10 @@
 package fr.pizzeria.ihm;
 
+import org.slf4j.Logger;
+import org.slf4j.LoggerFactory;
+
 import fr.pizzeria.console.PizzeriaAdminConsoleApp;
-import fr.pizzeria.dao.impl.PizzaDao;
+import fr.pizzeria.dao.impl.PizzaDaoJPA;
 import fr.pizzeria.model.Pizza;
 
 /**
@@ -10,28 +13,22 @@ import fr.pizzeria.model.Pizza;
  */
 public class ListerPizzasOptionMenu extends OptionMenu {
 
-	PizzaDao listpizza;
+	PizzaDaoJPA listpizza;
+	public static final Logger LOG = LoggerFactory.getLogger(PizzeriaAdminConsoleApp.class);
 	
-	public ListerPizzasOptionMenu(PizzaDao listepizza) {
+	public ListerPizzasOptionMenu(PizzaDaoJPA listepizza) {
 		super();
 		this.listpizza = listepizza;
 	}
 
 	public void execute() {
 		
-	//	PizzeriaAdminConsoleApp.setListpizza(new Pizza[8]);
+		LOG.info("Liste des pizzas:");
 		
-		System.out.println("Liste des pizzas:");
-		/*for (int i=0; i < PizzeriaAdminConsoleApp.getListpizza().length; i++)
-		{
-			if (PizzeriaAdminConsoleApp.getListpizza()!=null){
-				System.out.println(PizzeriaAdminConsoleApp.getListpizza().toString());
-			}
-		}*/
 		for (int i=0; i < this.listpizza.getL().size(); i++)
 		{
 			if (listpizza.getL()!=null){
-				System.out.println(listpizza.getL().get(i).toString());
+				LOG.info(listpizza.getL().get(i).toString());
 			}
 		}
 	}

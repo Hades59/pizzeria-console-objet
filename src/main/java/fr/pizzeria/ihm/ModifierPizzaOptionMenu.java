@@ -4,7 +4,7 @@ import org.slf4j.Logger;
 import org.slf4j.LoggerFactory;
 
 import fr.pizzeria.console.PizzeriaAdminConsoleApp;
-import fr.pizzeria.dao.impl.PizzaDao;
+import fr.pizzeria.dao.impl.PizzaDaoJPA;
 import fr.pizzeria.model.CategoriePizza;
 import fr.pizzeria.model.Pizza;
 
@@ -13,18 +13,18 @@ public class ModifierPizzaOptionMenu extends OptionMenu {
 	/**
 	 * 
 	 */
-	PizzaDao modpizza;
+	PizzaDaoJPA modpizza;
 
 	public static final Logger LOG = LoggerFactory.getLogger(PizzeriaAdminConsoleApp.class);
 
-	public ModifierPizzaOptionMenu(	PizzaDao modpizza) {
+	public ModifierPizzaOptionMenu(	PizzaDaoJPA modpizza) {
 		super();
 		this.modpizza = modpizza;
 	}
 
 	public void execute() {
 
-		String code=null, newCode = null, nom=null;
+		String code = null, newCode = null, nom = null;
 		double prix = -1.0;
 		int categorie =0;
 
@@ -53,14 +53,9 @@ public class ModifierPizzaOptionMenu extends OptionMenu {
 		Pizza p;
 		switch(categorie)
 		{
-			case 1: p = new Pizza(code, nom, prix, CategoriePizza.VIANDE);
-					
-				break;
-			
-			case 2: p = new Pizza(code, nom, prix, CategoriePizza.SANS_VIANDE);
-				break;
-				
-			case 3: p = new Pizza(code, nom, prix, CategoriePizza.POISSON);
+			case 1: 
+			case 2: 				
+			case 3: p = new Pizza(code, nom, prix, modpizza.findCategorie(categorie));
 				break;
 				
 			default: LOG.info("Catégorie non valide!!!");

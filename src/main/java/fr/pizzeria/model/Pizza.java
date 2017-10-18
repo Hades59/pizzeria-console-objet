@@ -2,14 +2,33 @@ package fr.pizzeria.model;
 import java.text.DecimalFormat;
 import java.text.NumberFormat;
 
+import javax.persistence.Column;
+import javax.persistence.Entity;
+import javax.persistence.GeneratedValue;
+import javax.persistence.GenerationType;
+import javax.persistence.Id;
+import javax.persistence.JoinColumn;
+import javax.persistence.ManyToOne;
+import javax.persistence.Table;
+
+@Entity
+@Table(name = "pizza")
 public class Pizza {
 	
+	@Id
+	@GeneratedValue(strategy=GenerationType.IDENTITY)
 	private Integer id;
+	@Column(name = "code", length = 10, nullable = false, unique = true)
 	private String code;
+	@Column(name = "nom", length = 30, nullable = false, unique = true)
 	private String nom;
+	@Column(name = "prix", nullable = false, unique = true)
 	private double prix;
 	NumberFormat formatter = new DecimalFormat("#0.00");
-	int categorie;
+	
+	@ManyToOne
+	@JoinColumn(name = "categorie")
+	private Categorie categorie;
 
 	/**
 	 * @param code
@@ -17,7 +36,11 @@ public class Pizza {
 	 * @param prix
 	 * @param categorie
 	 */
-	public Pizza(String code, String nom, double prix, int categorie) {
+	public Pizza(){
+		
+	}
+	
+	public Pizza(String code, String nom, double prix, Categorie categorie) {
 		super();
 		this.code = code;
 		this.nom = nom;
@@ -66,14 +89,14 @@ public class Pizza {
 	/** Getter for categorie
 	 * @return the categorie
 	 */
-	public CategoriePizza getCategorie() {
+	public Categorie getCategorie() {
 		return categorie;
 	}
 
 	/** Setter for categorie
 	 * @param categorie the categorie to set
 	 */
-	public void setCategorie(CategoriePizza categorie) {
+	public void setCategorie(Categorie categorie) {
 		this.categorie = categorie;
 	}
 

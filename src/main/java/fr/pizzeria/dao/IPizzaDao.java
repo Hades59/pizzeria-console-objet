@@ -3,6 +3,9 @@
  */
 package fr.pizzeria.dao;
 
+import java.io.FileNotFoundException;
+import java.io.IOException;
+import java.sql.SQLException;
 import java.util.List;
 
 import fr.pizzeria.exception.DeletePizzaException;
@@ -16,9 +19,9 @@ import fr.pizzeria.model.Pizza;
  */
 public interface IPizzaDao {
 	
-		List<Pizza> findAllPizzas();
-		boolean saveNewPizza(Pizza pizza) throws SavePizzaException;
-		boolean updatePizza(String codePizza, Pizza pizza) throws UpdatePizzaException;
-		boolean deletePizza(String codePizza) throws DeletePizzaException;
+		List<Pizza> findAllPizzas() throws FileNotFoundException, IOException;
+		boolean saveNewPizza(Pizza pizza) throws SavePizzaException, IOException, SQLException;
+		boolean updatePizza(String codePizza, Pizza pizza) throws UpdatePizzaException, SQLException;
+		boolean deletePizza(String codePizza) throws DeletePizzaException, SQLException;
 		
 }
